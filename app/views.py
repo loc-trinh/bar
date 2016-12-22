@@ -5,7 +5,7 @@ from django.db.models import Q
 from models import Drink
 
 def index(request):
-	drinks = Drink.objects.all()
+	drinks = Drink.objects.order_by("name")
 	num_pages = (len(drinks)-1)/9 + 1
 
 	context = {}
@@ -22,7 +22,7 @@ def page(request, page_id):
 	if page_id == 1:
 		return redirect("/")
 
-	drinks = Drink.objects.all()
+	drinks = Drink.objects.order_by("name")
 	num_pages = (len(drinks)-1)/9 + 1
 
 	context = {}
@@ -54,7 +54,11 @@ def favorite(request):
 	return render(request, 'app/favorite.html', {})
 
 def available(request):
-	return render(request, 'app/available.html', {})
+	drinks = Drink.objects.filter(available = True).order_by("name")
+
+	context = {'drinks':drinks}
+	return render(request, 'app/available.html', context)
+	
 
 def special(request):
 	return render(request, 'app/thespecial.html', {})

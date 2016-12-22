@@ -18,8 +18,8 @@
   </li>
   <li><a class="subheader green-text text-accent-2">DRINKS</a></li>
   <li class="active"><a href="/available" class="waves-effect white-text">Available<i class="small material-icons white-text">check_circle</i></a></li>
-  <li><a href="/" class="waves-effect white-text">Recipe<i class="small material-icons white-text">view_list</i></a></li>
-  <li><a href="/favorite" class="waves-effect white-text">Favorite<i class="small material-icons white-text">favorite</i></a></li>
+  <li><a href="/" class="waves-effect white-text">Recipes<i class="small material-icons white-text">view_list</i></a></li>
+  <li><a href="/favorite" class="waves-effect white-text">Favorites<i class="small material-icons white-text">favorite</i></a></li>
   <li><a class="subheader green-text text-accent-2">SPECIALS</a></li>
   <li><a href="/special" class="waves-effect white-text">The Special<i class="small material-icons white-text">star_rate</i></a></li>
 </ul>
@@ -27,4 +27,41 @@
 {% endblock %}
 
 {% block content %}
+<nav class="white z-depth-1">
+  <div class="nav-wrapper">
+    <form method="get" action="/results">
+      <div class="input-field black-text">
+        <input id="search" type="search" name="query" placeholder="Type to search..." required>
+        <label for="search"><i class="material-icons black-text">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row"></div>
+  <div class="row"></div>
+  {% for drink in drinks %}
+    <div class="row thin">
+        <div class="col s12 m12">
+          <div class="card horizontal z-depth-2">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="{% static 'img/' %}{{drink.image_name}}">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4 truncate">{{drink.name}}<i class="material-icons voteup teal-text text-accent-4">thumb_up</i><i class="material-icons votedown red-text text-darken-1">thumb_down</i></span>
+              <p>{{drink.ingridients}}</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">{{drink.name}}<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  {% endfor %}
+  <div class="row"></div>
+  <div class="row"></div>
+</div> 
 {% endblock %}
