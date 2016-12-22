@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+  <head>
+    <title>{{ title }}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" >
+      <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+      <link rel="icon" href="{% static 'img/sidebarIcon.png' %}">
+  </head>
+
+
+  <body>
+    <ul id="slide-out" class="side-nav fixed blue-grey darken-4 z-depth-4">
+      <li>
+        <div class="userView">
+          <div class="background">
+            <img class="responsive-img" src="{% static 'img/barbackground.jpg' %}">
+          </div>
+          <img class="circle" src="{% static 'img/sidebarIcon.png' %}">
+          <span class="white-text name">STRAIGHT SHOTS</span>
+          <span class="white-text email">It's what we do.</span>
+        </div>
+      </li>
+      <li><a class="subheader green-text text-accent-2">DRINKS</a></li>
+      <li class="active"><a href="#!" class="waves-effect white-text">Available<i class="small material-icons white-text">check_circle</i></a></li>
+      <li><a href="#!" class="waves-effect white-text">Recipe<i class="small material-icons white-text">view_list</i></a></li>
+      <li><a href="#!" class="waves-effect white-text">Favorite<i class="small material-icons white-text">favorite</i></a></li>
+      <li><a class="subheader green-text text-accent-2">SPECIALS</a></li>
+      <li><a href="#!" class="waves-effect white-text">The Special<i class="small material-icons white-text">star_rate</i></a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse blue-grey darken-4 z-depth-4"><i class="material-icons white-text">menu</i></a>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/myjs.js' %}"></script>
+  </body>
+</html>

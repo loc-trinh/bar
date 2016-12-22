@@ -1,0 +1,76 @@
+body{
+	padding-left: 240px;
+}
+
+.container{
+	width: 82%;
+}
+
+#slide-out li.active{
+	background: #202b30;
+}
+
+.button-collapse{
+	height: 50px;
+	display: none;
+}
+
+.button-collapse i.material-icons{
+	padding: 12px;
+}
+
+.input-field label i.material-icons{
+	color: #263238;
+}
+.input-field label.active i.material-icons{
+	color: #263238;
+}
+
+.card .card-content{
+	padding-top: 10px;
+}
+
+.pagination { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination li.active{
+	background: #37474f;
+}
+
+nav {
+    height: 45px;
+    line-height: 45px;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 45px;
+    line-height: 45px;
+}
+
+nav .button-collapse i {
+    height: 45px;
+    line-height: 45px;
+}
+
+nav .brand-logo { 
+    font-size: 1.6rem; 
+}
+
+@media only screen and (max-width : 992px) {
+	body{
+		padding-left: 0;
+	}
+	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+        height: 45px;
+        line-height: 45px;
+    }
+	.container{
+		width: 85%;
+	}
+	.button-collapse{
+		display: block;
+	}
+}
