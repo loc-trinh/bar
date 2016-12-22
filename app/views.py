@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 
 from models import Drink
 
@@ -46,3 +47,10 @@ def available(request):
 
 def special(request):
 	return render(request, 'app/thespecial.html', {})
+
+def search(request):
+	query = request.GET["query"]
+	context = {}
+	drinks = Drink.objects.filter(reduce(lambda x, y: x & y, [Q(name__icontains=word) | Q(ingridients__icontains=word) | Q(instructions__icontains=word) for word in query.split(",")]))
+	context['rows'] = [drinks[i:i + 3] for i in xrange(0, len(drinks), 3)]
+	return render(request, 'app/search.html', context)
