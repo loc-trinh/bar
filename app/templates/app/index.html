@@ -1,208 +1,70 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Recipe - Bar</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" >
-      <link rel="stylesheet" href="css/materialize.min.css">
-      <link rel="stylesheet" href="css/mycss.css">
-      <link rel="icon" href="img/sidebarIcon.png">
-  </head>
+{% extends "app/base.html" %}
 
+{% load staticfiles %}
 
-  <body>
-    <ul id="slide-out" class="side-nav fixed blue-grey darken-4 z-depth-4">
-      <li>
-        <div class="userView">
-          <div class="background">
-            <img class="responsive-img" src="img/barbackground.jpg">
-          </div>
-          <img class="circle" src="img/sidebarIcon.png">
-          <span class="white-text name">STRAIGHT SHOTS</span>
-          <span class="white-text email">It's what we do.</span>
-        </div>
-      </li>
-      <li><a class="subheader green-text text-accent-2">DRINKS</a></li>
-      <li class="active"><a href="#!" class="waves-effect white-text">Available<i class="small material-icons white-text">check_circle</i></a></li>
-      <li><a href="#!" class="waves-effect white-text">Recipe<i class="small material-icons white-text">view_list</i></a></li>
-      <li><a href="#!" class="waves-effect white-text">Favorite<i class="small material-icons white-text">favorite</i></a></li>
-      <li><a class="subheader green-text text-accent-2">SPECIALS</a></li>
-      <li><a href="#!" class="waves-effect white-text">The Special<i class="small material-icons white-text">star_rate</i></a></li>
-    </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse blue-grey darken-4 z-depth-4"><i class="material-icons white-text">menu</i></a>
+{% block title %}Recipe - Bar{% endblock %}
 
-
-    <nav class="white z-depth-1">
-      <div class="nav-wrapper">
-        <form>
-          <div class="input-field">
-            <input id="search" type="search" placeholder="Type to search...">
-            <label for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-          </div>
-        </form>
+{% block content %}
+<nav class="white z-depth-1">
+  <div class="nav-wrapper">
+    <form>
+      <div class="input-field">
+        <input id="search" type="search" placeholder="Type to search...">
+        <label for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
       </div>
-    </nav>
+    </form>
+  </div>
+</nav>
 
-
-    <div class="container">
-      <div class="row"></div>
-      <div class="row"></div>
-      <div class="row">
+<div class="container">
+  <div class="row"></div>
+  <div class="row"></div>
+ {% for row in rows %}
+    <div class="row">
+      {% for drink in row %}
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/martini.jpg">
+              <img class="activator" src="{% static 'img/' %}{{drink.image_name}}">
             </div>
             <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4 truncate">Martini<a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
-              <p>Rum, vermouth</p>
+              <span class="card-title activator grey-text text-darken-4 truncate">{{drink.name}}<a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
+              <p>{{drink.ingridients}}</p>
             </div>
             <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <span class="card-title grey-text text-darken-4">{{drink.name}}<i class="material-icons right">close</i></span>
               <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
           </div>
         </div>
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/manhattan.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4 truncate">Manhattan <a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
-              <p>Rye whiskey, vermouth</p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/margarita.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4 truncate">Margarita<a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
-              <p>Tequila, triple sec</p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/bloodymary.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4 truncate">Bloody Mary<a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
-              <p>Vodka, tomato</p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/oldfashioned.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4 truncate">Old Fashioned<a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
-              <p>Whiskey</p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/mojito.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4 truncate">Mojito<a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
-              <p>White rum</p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/ginandtonic.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4 truncate">Gin &amp; Tonic<a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
-              <p>Gin, tonic</p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/pinacolada.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4 truncate">Pina Colada <a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
-              <p>Rum, coconut milk</p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="img/maitai.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4 truncate">Mai Tai<a class="btn-floating btn-med waves-effect waves-light red" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">list</i></a></span>
-              <p>Rum, juice, syrup</p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <ul class="pagination">
-        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-        <li class="active"><a href="#!">1</a></li>
-        <li class="waves-effect"><a href="#!">2</a></li>
-        <li class="waves-effect"><a href="#!">3</a></li>
-        <li class="waves-effect"><a href="#!">4</a></li>
-        <li class="waves-effect"><a href="#!">5</a></li>
-        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-      </ul>
-      <div class="row"></div>
+      {% endfor %}
     </div>
+  {% endfor %}
+</div> 
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/myjs.js"></script>
-  </body>
-</html>
+<ul class="pagination">
+  {% if active_page == 1 %}
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+  {% else %}
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+  {% endif %}
+
+  {% for page in pagination %}
+    {% if page == active_page %}
+      <li class="active"><a href="#!">{{page}}</a></li>
+    {% else %}
+      <li class="waves-effect"><a href="#!">{{page}}</a></li>
+    {% endif %}
+  {% endfor %}
+
+  {% if active_page == max_page %}
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  {% else %}
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  {% endif %}
+  
+</ul>
+
+
+{% endblock %}

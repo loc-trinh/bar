@@ -4,7 +4,7 @@
 
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title>{% block title %}{% endblock %}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
@@ -33,6 +33,8 @@
       <li><a href="#!" class="waves-effect white-text">The Special<i class="small material-icons white-text">star_rate</i></a></li>
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse blue-grey darken-4 z-depth-4"><i class="material-icons white-text">menu</i></a>
+
+    {% block content %}{% endblock %}
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
