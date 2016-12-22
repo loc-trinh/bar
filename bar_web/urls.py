@@ -16,9 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-import app.views
+from app import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', app.views.index, name="index")
+    url(r'^$', views.index, name="index"),
+    url(r'^available/', views.available, name="available"),
+    url(r'^favorite/', views.favorite, name="favorite"),
+    url(r'^special/', views.special, name="special"),
+    url(r'^page/(?P<page_id>[0-9]+)/$', views.page, name='page'),
 ]

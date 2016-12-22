@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-{% block title %}Special - Bar{% endblock %}
+{% block title %}Favorite - Bar{% endblock %}
 
 {% block menu %}
 <ul id="slide-out" class="side-nav fixed blue-grey darken-4 z-depth-4">
@@ -19,9 +19,9 @@
   <li><a class="subheader green-text text-accent-2">DRINKS</a></li>
   <li><a href="/available" class="waves-effect white-text">Available<i class="small material-icons white-text">check_circle</i></a></li>
   <li><a href="/" class="waves-effect white-text">Recipe<i class="small material-icons white-text">view_list</i></a></li>
-  <li><a href="/favorite" class="waves-effect white-text">Favorite<i class="small material-icons white-text">favorite</i></a></li>
+  <li class="active"><a href="/favorite" class="waves-effect white-text">Favorite<i class="small material-icons white-text">favorite</i></a></li>
   <li><a class="subheader green-text text-accent-2">SPECIALS</a></li>
-  <li class="active"><a href="/special" class="waves-effect white-text">The Special<i class="small material-icons white-text">star_rate</i></a></li>
+  <li><a href="/special" class="waves-effect white-text">The Special<i class="small material-icons white-text">star_rate</i></a></li>
 </ul>
 <a href="#" data-activates="slide-out" class="button-collapse blue-grey darken-4 z-depth-4"><i class="material-icons white-text">menu</i></a>
 {% endblock %}

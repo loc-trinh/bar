@@ -4,6 +4,28 @@
 
 {% block title %}Recipe - Bar{% endblock %}
 
+{% block menu %}
+<ul id="slide-out" class="side-nav fixed blue-grey darken-4 z-depth-4">
+  <li>
+    <div class="userView">
+      <div class="background">
+        <img class="responsive-img" src="{% static 'img/barbackground.jpg' %}">
+      </div>
+      <img class="circle" src="{% static 'img/sidebarIcon.png' %}">
+      <span class="white-text name">STRAIGHT SHOTS</span>
+      <span class="white-text email">It's what we do.</span>
+    </div>
+  </li>
+  <li><a class="subheader green-text text-accent-2">DRINKS</a></li>
+  <li><a href="/available" class="waves-effect white-text">Available<i class="small material-icons white-text">check_circle</i></a></li>
+  <li class="active"><a href="/" class="waves-effect white-text">Recipe<i class="small material-icons white-text">view_list</i></a></li>
+  <li><a href="/favorite" class="waves-effect white-text">Favorite<i class="small material-icons white-text">favorite</i></a></li>
+  <li><a class="subheader green-text text-accent-2">SPECIALS</a></li>
+  <li><a href="/special" class="waves-effect white-text">The Special<i class="small material-icons white-text">star_rate</i></a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse blue-grey darken-4 z-depth-4"><i class="material-icons white-text">menu</i></a>
+{% endblock %}
+
 {% block content %}
 <nav class="white z-depth-1">
   <div class="nav-wrapper">
@@ -47,21 +69,21 @@
   {% if active_page == 1 %}
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
   {% else %}
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="waves-effect"><a href="/page/{{active_page|add:-1}}"><i class="material-icons">chevron_left</i></a></li>
   {% endif %}
 
   {% for page in pagination %}
     {% if page == active_page %}
-      <li class="active"><a href="#!">{{page}}</a></li>
+      <li class="active"><a href="/page/{{page}}">{{page}}</a></li>
     {% else %}
-      <li class="waves-effect"><a href="#!">{{page}}</a></li>
+      <li class="waves-effect"><a href="/page/{{page}}">{{page}}</a></li>
     {% endif %}
   {% endfor %}
 
   {% if active_page == max_page %}
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
   {% else %}
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    <li class="waves-effect"><a href="/page/{{active_page|add:1}}"><i class="material-icons">chevron_right</i></a></li>
   {% endif %}
   
 </ul>
