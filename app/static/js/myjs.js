@@ -17,5 +17,5 @@ $(window).resize(function() {
 		}else{
 			$('.second').insertBefore($('.first'));
 		}
-	}, 100);
+	}, 50);
 });
