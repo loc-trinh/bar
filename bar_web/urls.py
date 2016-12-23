@@ -15,15 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.conf.urls import handler400, handler403, handler404, handler500
 
 from app import views
-
-
-# handler400 = 'app.views.bad_request'
-# handler403 = 'app.views.permission_denied'
-handler404 = 'app.views.page_not_found'
-# handler500 = 'app.views.server_error'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
