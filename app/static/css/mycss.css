@@ -171,8 +171,14 @@ nav ul li:hover {
 	.special{
 		font-size: 15pt !important;
 	}
-
 	.special i.material-icons{
 		font-size: 12pt;
+	}
+	.tinyscreen{
+		font-size: 18pt !important;
+	}
+
+	.tinyscreen i.material-icons{
+		font-size: 15pt;
 	}
 }
