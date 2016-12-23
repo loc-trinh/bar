@@ -157,7 +157,7 @@ nav ul li:hover {
 		position: absolute;
 		display: inline-block;
 		right: 8px;
-		top: 13px;
+		top: 11px;
 	}
 
 	.votedown{
@@ -165,7 +165,7 @@ nav ul li:hover {
 		position: absolute;
 		display: inline-block;
 		right: 8px;
-		bottom: 13px;
+		bottom: 11px;
 	}
 
 	.special{
