@@ -6,12 +6,6 @@ body{
 	width: 82%;
 }
 
-.carousel-item{
-	width: 100% !important;
-	height: auto !important;
-	min-height: 400px !important;
-}
-
 #slide-out li.active{
 	background: #202b30;
 }
@@ -180,11 +174,5 @@ nav ul li:hover {
 
 	.special i.material-icons{
 		font-size: 12pt;
-	}
-
-	.carousel-item{
-		width: 100% !important;
-		height: 190px !important;
-		min-height: initial !important;
 	}
 }
