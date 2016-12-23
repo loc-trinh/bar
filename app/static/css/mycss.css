@@ -10,6 +10,10 @@ body{
 	background: #202b30;
 }
 
+.condense{
+	margin-bottom: 18px;
+}
+
 .voteup:hover, .votedown:hover{
 	font-size: 35px;
 }
@@ -30,16 +34,6 @@ body{
 	bottom: 28px;
 }
 
-.btn-small {
-    height: 24px;
-    width: 24px;
-    line-height: 24px;
-    padding: 0;
-}
-
-.thin {
-	margin-bottom: 20px;
-}
 .horizontal{
 	margin: 0px;
 }
@@ -142,6 +136,7 @@ nav ul li:hover {
 	.horizontal .card-content{
 		padding-top: 0px;
 		padding-bottom: 0px;
+		padding-left: 10px;
 		font-size: 8pt;
 	}
 
