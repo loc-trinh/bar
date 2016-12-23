@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, render_to_response
 from django.http import HttpResponse, Http404
+from django.template import RequestContext
 from django.db.models import Q
 
 from models import Drink
@@ -72,6 +73,7 @@ def favorite(request):
 	context['rest'] = [(4, drinks[3]), (5, drinks[4]),(6, drinks[5])]
 	return render(request, 'app/favorite.html', context)
 
+
 def vote(request):
 	drink = get_object_or_404(Drink, image_name=request.POST["name"])
 	drink.vote_count += 1 if request.POST["type"] == "upvote" else -1
@@ -81,5 +83,11 @@ def vote(request):
 
 def special(request):
 	return render(request, 'app/thespecial.html', {})
+
+
+def page_not_found(request):
+	response = render_to_response('app/404.html',context_instance=RequestContext(request))
+	response.status_code = 404
+	return response
 
 

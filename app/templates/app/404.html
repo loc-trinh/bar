@@ -1,0 +1,54 @@
+{% extends "app/base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Results - Bar{% endblock %}
+
+{% block menu %}
+<ul id="slide-out" class="side-nav fixed blue-grey darken-4 z-depth-4">
+  <li>
+    <div class="userView">
+      <div class="background"><img class="responsive-img" src="{% static 'img/barbackground.jpg' %}"></div>
+      <img class="circle" src="{% static 'img/sidebarIcon.png' %}">
+      <span class="white-text name">STRAIGHT SHOTS</span>
+      <span class="white-text email">It's what we do.</span>
+    </div>
+  </li>
+  <li><a class="subheader green-text text-accent-2">DRINKS</a></li>
+  <li><a href="/available" class="waves-effect white-text">Available<i class="small material-icons white-text">check_circle</i></a></li>
+  <li><a href="/" class="waves-effect white-text">Recipes<i class="small material-icons white-text">view_list</i></a></li>
+  <li><a href="/favorite" class="waves-effect white-text">Favorites<i class="small material-icons white-text">favorite</i></a></li>
+  <li><a class="subheader green-text text-accent-2">SPECIALS</a></li>
+  <li><a href="/special" class="waves-effect white-text">The Special<i class="small material-icons white-text">star_rate</i></a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse blue-grey darken-4 z-depth-4"><i class="material-icons white-text">menu</i></a>
+{% endblock %}
+
+{% block content %}
+<nav class="white z-depth-1">
+  <div class="nav-wrapper">
+    <form method="get" action="/results">
+      <div class="input-field black-text">
+        <input id="search" type="search" name="query" placeholder="Type to search..." required>
+        <label for="search"><i class="material-icons black-text">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">404 Page Not Found</span>
+          <p>You're wasted. Get out of here!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
