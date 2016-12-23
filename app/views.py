@@ -4,6 +4,7 @@ from django.db.models import Q
 
 from models import Drink
 
+
 def index(request):
 	drinks = Drink.objects.order_by("name")
 	num_pages = (len(drinks)-1)/9 + 1
@@ -15,6 +16,7 @@ def index(request):
 	context['rows'] = [drinks[i:i + 3] for i in xrange(0, 9, 3)]
 	
 	return render(request, 'app/index.html', context)
+
 
 def page(request, page_id):
 	page_id = int(page_id)
@@ -38,6 +40,7 @@ def page(request, page_id):
 	else:
 		raise Http404()
 
+
 def search(request):
 	query = request.GET["query"]
 	query_list = query.split(",")
@@ -50,15 +53,25 @@ def search(request):
 	
 	return render(request, 'app/search.html', context)
 
-def favorite(request):
-	return render(request, 'app/favorite.html', {})
 
 def available(request):
 	drinks = Drink.objects.filter(available = True).order_by("name")
 
-	context = {'drinks':drinks}
+	context = {}
+	context["isopen"] = True if len(drinks) > 0 else False
+	context["drinks"] = drinks
 	return render(request, 'app/available.html', context)
-	
+
+
+def favorite(request):
+	drinks = Drink.objects.order_by("-vote_count")[:6]
+	context = {}
+	context['first'] = drinks[0]
+	context['second'] = drinks[1]
+	context['third'] = drinks[2]
+	context['rest'] = [(4, drinks[3]), (5, drinks[4]),(6, drinks[5])]
+	return render(request, 'app/favorite.html', context)
+
 
 def special(request):
 	return render(request, 'app/thespecial.html', {})

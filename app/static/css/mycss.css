@@ -10,8 +10,16 @@ body{
 	background: #202b30;
 }
 
+.ranking i.material-icons{
+	font-size: 27pt;
+}
+
+.low-ranking i.material-icons{
+	font-size: 18pt;
+}
+
 .condense{
-	margin-bottom: 18px;
+	margin-bottom: 17px;
 }
 
 .voteup:hover, .votedown:hover{
