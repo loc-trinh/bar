@@ -7,15 +7,3 @@ $(document).ready(function(){
      $('.carousel.carousel-slider').carousel({full_width: true});
 
 });
-
-var resizeTimer;
-$(window).resize(function() {
-	clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function resizeRank(){
-		if ($(window).width() < 600){
-			$('.first').insertBefore($('.second'));
-		}else{
-			$('.second').insertBefore($('.first'));
-		}
-	}, 50);
-});
