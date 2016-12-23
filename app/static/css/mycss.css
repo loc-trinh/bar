@@ -2,12 +2,14 @@ body{
 	padding-left: 240px;
 }
 
-.carousel{
-	height: 300px;
-}
-
 .container{
 	width: 82%;
+}
+
+.carousel-item{
+	width: 100% !important;
+	height: auto !important;
+	min-height: 400px !important;
 }
 
 #slide-out li.active{
@@ -170,5 +172,19 @@ nav ul li:hover {
 		display: inline-block;
 		right: 8px;
 		bottom: 13px;
+	}
+
+	.special{
+		font-size: 15pt !important;
+	}
+
+	.special i.material-icons{
+		font-size: 12pt;
+	}
+
+	.carousel-item{
+		width: 100% !important;
+		height: 190px !important;
+		min-height: initial !important;
 	}
 }
