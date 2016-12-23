@@ -27,4 +27,39 @@
 {% endblock %}
 
 {% block content %}
+<nav class="white z-depth-1">
+  <div class="nav-wrapper">
+    <form method="get" action="/results">
+      <div class="input-field black-text">
+        <input id="search" type="search" name="query" placeholder="Type to search..." required>
+        <label for="search"><i class="material-icons black-text">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+    </form>
+  </div>
+</nav>
+<div class="container">
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title valign-wrapper"><i class="material-icons valign">star_border</i>&nbsp;&nbsp;SPECIALS TONIGHT&nbsp;&nbsp;<i class="material-icons valign">star_border</i></span>
+          <p>Ask your bartender and we'll know what to make for you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="carousel carousel-slider" data-indicators="true">
+    <img class="carousel-item" src="http://lorempixel.com/800/400/food/1">
+    <img class="carousel-item" src="http://lorempixel.com/800/400/food/2">
+    <img class="carousel-item" src="http://lorempixel.com/800/400/food/3">
+    <img class="carousel-item" src="http://lorempixel.com/800/400/food/4">
+  </div>
+  <div class="row"></div>
+  <div class="row"></div>
+</div>
 {% endblock %}
