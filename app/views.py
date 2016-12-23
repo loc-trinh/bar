@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, Http404
 from django.db.models import Q
 
@@ -71,6 +71,12 @@ def favorite(request):
 	context['third'] = drinks[2]
 	context['rest'] = [(4, drinks[3]), (5, drinks[4]),(6, drinks[5])]
 	return render(request, 'app/favorite.html', context)
+
+def vote(request):
+	drink = get_object_or_404(Drink, image_name=request.POST["name"])
+	drink.vote_count += 1 if request.POST["type"] == "upvote" else -1
+	drink.save()
+	return HttpResponse("Done.")
 
 
 def special(request):

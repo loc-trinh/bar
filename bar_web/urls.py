@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^favorite/', views.favorite, name="favorite"),
     url(r'^special/', views.special, name="special"),
     url(r'^results/', views.search, name="search"),
+    url(r'^vote/', views.vote, name="vote"),
     url(r'^page/(?P<page_id>[0-9]+)/$', views.page, name='page'),
 ]
