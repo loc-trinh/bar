@@ -44,8 +44,9 @@ $(document).ready(function(){
 	        name: this.getAttribute("name"),
 	        type: "upvote"
 	    });
-	    $(this).hide();
-	    $(this).siblings().hide();
+	    $(this).removeClass('teal-text').addClass('grey-text');
+	    $(this).siblings().removeClass('red-text').addClass('grey-text');
+	    $(this).siblings().unbind('click');
 	});
 	$(".votedown").one("click", function(){
 	    Materialize.toast("Not good? Let us know!", 800, 'rounded');
@@ -54,7 +55,8 @@ $(document).ready(function(){
 	        name: this.getAttribute("name"),
 	        type: "downvote"
 	    });
-	    $(this).hide();
-	    $(this).siblings().hide();
+	    $(this).removeClass('red-text').addClass('grey-text');
+	    $(this).siblings().removeClass('teal-text').addClass('grey-text');
+	    $(this).siblings().unbind('click');
 	});
 });
