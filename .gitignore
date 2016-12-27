@@ -1,5 +1,5 @@
 venv
-app/static/img/*
+app/static/img/*.jpg
 data.json
 db.sqlite3
 .DS_Store
