@@ -50,11 +50,11 @@
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4 truncate ranking">{{first.name}}<a class="btn-floating btn-large waves-effect waves-light green z-depth-2" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">looks_one</i></a></span>
-          <p>{{first.ingridients}}</p>
+          <p class="truncate">{{first.ingridients}}</p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">{{first.name}}<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          <span>{{first.instructions|linebreaks}}</span>
         </div>
       </div>
     </div>
@@ -65,11 +65,11 @@
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4 truncate ranking">{{second.name}}<a class="btn-floating btn-large waves-effect waves-light light-green z-depth-2" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">looks_two</i></a></span>
-          <p>{{second.ingridients}}</p>
+          <p class="truncate">{{second.ingridients}}</p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">{{second.name}}<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          <span>{{second.instructions|linebreaks}}</span>
         </div>
       </div>
     </div>
@@ -80,11 +80,11 @@
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4 truncate ranking">{{third.name}}<a class="btn-floating btn-large waves-effect waves-light lime z-depth-2" style="position: absolute; display: inline-block; right: 20px; bottom: 75px;"><i class="material-icons">looks_3</i></a></span>
-          <p>{{third.ingridients}}</p>
+          <p class="truncate">{{third.ingridients}}</p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">{{third.name}}<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          <span>{{third.instructions|linebreaks}}</span>
         </div>
       </div>
     </div>
