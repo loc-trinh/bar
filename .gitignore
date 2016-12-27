@@ -1,4 +1,6 @@
 venv
+app/static/img/*
+data.json
 db.sqlite3
 .DS_Store
 *.pyc
